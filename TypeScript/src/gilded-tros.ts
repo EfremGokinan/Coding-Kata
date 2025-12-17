@@ -55,12 +55,12 @@ export class GildedTros {
                     // (otherwise backstage never drops to 0)
                     if (this.items[i].name != 'Backstage passes for Re:Factor' && this.items[i].name != 'Backstage passes for HAXX') {
                         if (this.items[i].quality > 0) {
-                            if (this.items[i].name != 'B-DAWG Keychain') {
-                                this.items[i].quality = this.items[i].quality - 1;
-                            }
+                            // CHANGED: smelly items degrade twice as fast after sell date too
+                            this.items[i].quality = this.items[i].quality - (isSmelly ? 2 : 1);
                         }
                     } else {
-                        this.items[i].quality = this.items[i].quality - this.items[i].quality;
+                        // CHANGED:Backstage passes drop to 0 after the conference
+                        this.items[i].quality = 0;
                     }
                 } else {
                     if (this.items[i].quality < 50) {
