@@ -23,7 +23,8 @@ export class GildedTros {
 
             if (this.items[i].name != 'Good Wine' && this.items[i].name != 'Backstage passes for Re:Factor' && this.items[i].name != 'Backstage passes for HAXX') {
                 if (this.items[i].quality > 0) {
-                        this.items[i].quality = this.items[i].quality - 1;
+                        // CHANGED: smelly items degrade twice as fast
+                        this.items[i].quality = this.items[i].quality - (isSmelly ? 2 : 1);
                 }
             } else {
                 if (this.items[i].quality < 50) {
