@@ -9,7 +9,7 @@ export class GildedTros {
     public updateQuality(): void {
         for (let i = 0; i < this.items.length; i++) {
 
-             // NEW: Smelly items degrade twice as fast as normal items
+            // NEW: Smelly items degrade twice as fast as normal items
             const isSmelly =
                 this.items[i].name == 'Duplicate Code' ||
                 this.items[i].name == 'Long Methods' ||

@@ -1,5 +1,5 @@
-import { Item } from './item';
-import { GildedTros } from './gilded-tros';
+import { Item } from './item.js';
+import { GildedTros } from './gilded-tros.js';
 
 console.log('AXXES CODE KATA - GILDED TROS');
 
