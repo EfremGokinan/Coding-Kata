@@ -8,8 +8,14 @@ export class GildedTros {
 
     public updateQuality(): void {
         for (let i = 0; i < this.items.length; i++) {
-            if (this.items[i].name != 'Good Wine' && this.items[i].name != 'Backstage passes for Re:Factor'
-                && this.items[i].name != 'Backstage passes for HAXX') {
+
+             // NEW: Smelly items degrade twice as fast as normal items
+            const isSmelly =
+                this.items[i].name == 'Duplicate Code' ||
+                this.items[i].name == 'Long Methods' ||
+                this.items[i].name == 'Ugly Variable Names';
+
+            if (this.items[i].name != 'Good Wine' && this.items[i].name != 'Backstage passes for Re:Factor' && this.items[i].name != 'Backstage passes for HAXX') {
                 if (this.items[i].quality > 0) {
                     if (this.items[i].name != 'B-DAWG Keychain') {
                         this.items[i].quality = this.items[i].quality - 1;
