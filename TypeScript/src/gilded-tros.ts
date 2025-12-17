@@ -68,6 +68,10 @@ export class GildedTros {
                     }
                 }
             }
+            // NEW: Quality is never negative
+            if (this.items[i].quality < 0) {
+                this.items[i].quality = 0;
+            }
         }
     }
 
